@@ -4,4 +4,25 @@ from django.contrib import admin
 
 from .models import tradu
 
-admin.site.register(tradu)
+
+class TraduModelAdmin(admin.ModelAdmin):
+
+    fields= [
+        "origintitle",
+        "origintext",
+        "publilink",
+        "transtitle",
+        "transtext",
+        "translink",
+
+    ]
+
+    readonly_fields= ["publicdate", "transdate", "transupdate"]
+
+    class Meta:
+        model = tradu
+
+
+
+
+admin.site.register(tradu,TraduModelAdmin)
