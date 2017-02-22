@@ -8,6 +8,7 @@ from .models import tradu
 class TraduModelAdmin(admin.ModelAdmin):
 
     fields= [
+        "user",
         "origintitle",
         "origintext",
         "publilink",

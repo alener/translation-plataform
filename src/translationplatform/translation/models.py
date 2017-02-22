@@ -1,8 +1,10 @@
 from django.db import models
 from django.utils import timezone
+from django.conf import settings
 # Create your models here.
 
 class tradu(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,default='')
     origintitle = models.CharField("título original",max_length=40)
     origintext = models.TextField("texto original")
     publicdate = models.DateField("fecha de la publicación",default=timezone.now)
