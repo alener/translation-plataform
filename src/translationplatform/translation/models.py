@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
+from tinymce.models import HTMLField
+
 # Create your models here.
 
 class tradu(models.Model):
@@ -14,6 +16,7 @@ class tradu(models.Model):
     transdate = models.DateTimeField("comienzo de la traducción",auto_now_add=True, )
     transupdate = models.DateTimeField("última actualización de la traducción",default=timezone.now)
     translink = models.URLField("link a la traducción",null=True, blank=True)
+    content = HTMLField(default='')
 
 
     def __str__(self):
