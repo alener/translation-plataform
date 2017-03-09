@@ -6,7 +6,11 @@ from .models import tradu
 
 
 class TraduModelAdmin(admin.ModelAdmin):
-
+    list_display = []
+    list_display_links = []
+    list_editable = []
+    list_filter = []
+    search_fields = []
     fields= [
 
         "user",
