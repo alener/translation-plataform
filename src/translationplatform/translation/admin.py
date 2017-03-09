@@ -6,11 +6,24 @@ from .models import tradu
 
 
 class TraduModelAdmin(admin.ModelAdmin):
-    list_display = []
-    list_display_links = []
-    list_editable = []
-    list_filter = []
-    search_fields = []
+    list_display = ["user",
+        "origintitle",
+        "origintext",
+        "transtitle",
+        "content",
+    ]
+    list_display_links = ["origintitle","transtitle",]
+    list_editable = [
+        "origintext",
+        "content",]
+    list_filter = ["user","publicdate", "transdate", "transupdate"]
+    search_fields = [ "user",
+        "origintitle",
+        "origintext",
+        "publilink",
+        "transtitle",
+        "content",
+    ]
     fields= [
 
         "user",
